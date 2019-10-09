@@ -2,6 +2,7 @@ package com.example.lab4;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -11,10 +12,12 @@ public class CustomAdapter extends BaseAdapter {
 
     Context context;
     String colors[];
+    LayoutInflater inflater;
 
     public CustomAdapter(Context context, String colors[]){
         this.context = context;
         this.colors = colors;
+        inflater = (LayoutInflater.from(context));
     }
 
     @Override
@@ -34,11 +37,13 @@ public class CustomAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View view, ViewGroup parent) {
-        TextView textView = new TextView(context);
+        view = inflater.inflate(R.layout.spinner, null);
+        TextView textView = view.findViewById(R.id.textView);
         String colorValue = colors[position];
         textView.setText(colorValue);
         textView.setBackgroundColor(Color.parseColor(colorValue));
         textView.setTextSize(26);
-        return textView;
+
+        return view;
     }
 }
