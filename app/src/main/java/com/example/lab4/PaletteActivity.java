@@ -3,6 +3,7 @@ package com.example.lab4;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -19,7 +20,8 @@ public class PaletteActivity extends AppCompatActivity {
 
         final Spinner spinner = findViewById(R.id.spinner);
 
-        final String colors[] = {"Blue", "Yellow", "Red", "Black"};
+        Resources res = getResources();
+        final String[] colors = res.getStringArray(R.array.colors);
 
         CustomAdapter customAdapter = new CustomAdapter(this,colors);
         spinner.setAdapter(customAdapter);

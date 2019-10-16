@@ -1,7 +1,9 @@
 <resources>
-    <string name="app_name">Lab4</string>
-    <array name="colors">
-        <item>#0000FF</item>
-        <item>#808080</item>
-    </array>
+    <string name="app_name">Lab5</string>
+    <string-array name="colors">
+        <item>Blue</item>
+        <item>Red</item>
+        <item>Yellow</item>
+        <item>Black</item>
+    </string-array>
 </resources>
